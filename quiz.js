@@ -135,7 +135,7 @@ function nextQuestion() {
     resultElement.textContent = "";
     resultElement.style.color = "inherit";
     nextButton.style.display = "none";
-    startContainer.style.display = "none"; // Hide the start container
+    startContainer.style.display = "none"; 
   
     if (currentQuestionIndex < questions.length) {
       questionContainer.innerHTML = "";
