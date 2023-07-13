@@ -163,8 +163,13 @@ function startTimer() {
 function endQuiz() {
     clearInterval(timerId);
             quizContainer.innerHTML = `
-                <h3 class="ending">Quiz Over! Your score is ${score}.</h3>
-                <button id="restart-button">Restart Quiz</button>
+            <h2 class="ending">The quiz has ended! Your score is <span id="score">${score}</span>.</h2>
+            <form id="initials-form">
+              <label for="initials">Enter your initials:</label>
+              <input type="text" id="initials" name="initials" maxlength="3" required>
+              <button type="submit" id="save-button">Save</button>
+            </form>
+            <button id="restart-button">Restart Quiz</button>
             `;
             document.getElementById("restart-button").addEventListener("click", restartQuiz);
 }
