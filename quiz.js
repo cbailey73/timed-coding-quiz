@@ -172,12 +172,44 @@ function endQuiz() {
             <button id="restart-button">Restart Quiz</button>
             `;
             document.getElementById("restart-button").addEventListener("click", restartQuiz);
+
+            const saveButton = document.getElementById("save-button");
+            saveButton.addEventListener("submit", saveScore);
 }
+
+function saveScore(event) {
+    event.preventDefault();
+    const initialsInput = document.getElementById("initials");
+    const initials = initialsInput.value;
+  
+    // Get the existing highscores from local storage or initialize an empty array
+    const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+  
+    // Add the current score and initials to the highscores array
+    highscores.push({ initials, score });
+  
+    // Sort the highscores array in descending order based on score
+    highscores.sort((a, b) => b.score - a.score);
+  
+    // Keep only the top 10 highscores
+    const top10Highscores = highscores.slice(0, 9);
+  
+    // Save the updated highscores to local storage
+    localStorage.setItem("highscores", JSON.stringify(top10Highscores));
+  
+    // // Redirect to the highscores page
+    // window.location.href = "./highscores.html";
+  };
+
+function getHighscores() {
+    return JSON.parse(localStorage.getItem("highscores")) || [];
+  };
 
 function restartQuiz() {
     location.reload();
   };
 
-
-  
 document.getElementById("start-button").addEventListener("click", startQuiz);
+
+export {getHighscores}; 
+// module.exports = { getHighscores };
