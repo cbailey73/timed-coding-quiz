@@ -10,10 +10,10 @@ body {
     flex-wrap: wrap;
   }
   
-  #header {
+header {
     text-align: left;
     font-size: 25px;
-    min-height: 35px;
+    min-height: 30px;
     padding-left: 30px;
     margin-top: 0px;
     color: rgb(180, 89, 180);
@@ -29,21 +29,31 @@ body {
     align-items: flex-start;
     background-color: white;
     color: black;
-    width: 75vw;
+    width: 95vw;
     max-width: 100%;
     border: 1px solid black;
     border-radius: 5px;
-    margin: 30px;
+    margin-top: 30px;
     padding: 20px;
     box-sizing: border-box;
   }
+  
+  #highscores {
+    text-align: left;
+    top: 10px; 
+    left: 10px; 
+  }
 
   #time-span {
-    text-align: right; 
-    color: #c880e7;
-    font-size: 20px; 
+    text-align: right;
     top: 10px; 
     right: 10px; 
+  }
+
+  #highscores, #time-span {
+    text-align: right; 
+    color: #c880e7;
+    font-size: 20px;  
     margin-bottom: 35px;
     position: absolute;
   }
