@@ -69,8 +69,9 @@ header {
 #question-container {
     font-size: 25px;
     text-align: left;
-    margin: 20px;
-    padding: 10px 20px;
+    margin: 10px;
+    margin-left: 17px;
+    padding: 10px 15px;
 }
 
 #answer-container {
