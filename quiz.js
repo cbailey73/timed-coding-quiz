@@ -132,6 +132,7 @@ function nextQuestion() {
     const nextButton = document.getElementById("next-button");
   
     currentQuestionIndex++;
+
     resultElement.textContent = "";
     resultElement.style.color = "inherit";
     nextButton.style.display = "none";
@@ -179,6 +180,7 @@ function endQuiz() {
 
 function saveScore(event) {
     event.preventDefault();
+    
     const initialsInput = document.getElementById("initials");
     const initials = initialsInput.value;
   
