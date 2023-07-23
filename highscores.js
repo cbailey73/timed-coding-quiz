@@ -1,7 +1,13 @@
 // const { getHighscores } = require('./quiz.js');
 import { getHighscores } from "./quiz";
+// localStorage.getItem("highscores");
+
+// function getHighscores() {
+//   return JSON.parse(localStorage.getItem("highscores")) || [];
+// };
 
 const highscores = getHighscores();
+
 const highscoresContainer = document.getElementById("highscores-container");
 
 function displayHighscores() {

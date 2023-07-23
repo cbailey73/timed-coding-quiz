@@ -167,14 +167,14 @@ function endQuiz() {
             <form id="initials-form">
               <label for="initials">Enter your initials:</label>
               <input type="text" id="initials" name="initials" maxlength="3" required>
-              <button type="submit" id="save-button">Save</button>
+              <button id="save-button">Save</button>
             </form>
             <button id="restart-button">Restart Quiz</button>
             `;
             document.getElementById("restart-button").addEventListener("click", restartQuiz);
 
             const saveButton = document.getElementById("save-button");
-            saveButton.addEventListener("submit", saveScore);
+            saveButton.addEventListener("click", saveScore);
 }
 
 function saveScore(event) {
@@ -211,5 +211,5 @@ function restartQuiz() {
 
 document.getElementById("start-button").addEventListener("click", startQuiz);
 
-export {getHighscores}; 
-// module.exports = { getHighscores };
+// export {getHighscores}; 
+module.exports = { getHighscores };
