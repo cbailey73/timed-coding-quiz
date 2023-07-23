@@ -167,17 +167,42 @@ function endQuiz() {
             <form id="initials-form">
               <label for="initials">Enter your initials:</label>
               <input type="text" id="initials" name="initials" maxlength="3" required>
-              <button type="submit" id="save-button">Save</button>
+              <button id="save-button">Save</button>
             </form>
             <button id="restart-button">Restart Quiz</button>
             `;
             document.getElementById("restart-button").addEventListener("click", restartQuiz);
+
+            const saveButton = document.getElementById("save-button");
+            saveButton.addEventListener("click", saveScore);
 }
+
+function saveScore(event) {
+    event.preventDefault();
+    const initialsInput = document.getElementById("initials");
+    const initials = initialsInput.value;
+  
+    const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+  
+    highscores.push({ initials, score });
+  
+    highscores.sort((a, b) => b.score - a.score);
+  
+    const top10Highscores = highscores.slice(0, 10);
+  
+    localStorage.setItem("highscores", JSON.stringify(top10Highscores));
+
+    initialsInput.value = ""
+    // // Redirect to the highscores page
+    // window.location.href = "./highscores.html";
+  };
+
+// function getHighscores() {
+//     return JSON.parse(localStorage.getItem("highscores")) || [];
+//   };
 
 function restartQuiz() {
     location.reload();
   };
 
-
-  
 document.getElementById("start-button").addEventListener("click", startQuiz);
