@@ -197,10 +197,6 @@ function saveScore(event) {
     // window.location.href = "./highscores.html";
   };
 
-// function getHighscores() {
-//     return JSON.parse(localStorage.getItem("highscores")) || [];
-//   };
-
 function restartQuiz() {
     location.reload();
   };
