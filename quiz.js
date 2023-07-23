@@ -193,8 +193,6 @@ function saveScore(event) {
     localStorage.setItem("highscores", JSON.stringify(top10Highscores));
 
     initialsInput.value = ""
-    // // Redirect to the highscores page
-    // window.location.href = "./highscores.html";
   };
 
 function restartQuiz() {
